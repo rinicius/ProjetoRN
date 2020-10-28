@@ -16,7 +16,7 @@ const icones = {
 const TabRoutes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="home"
+      initialRouteName="Musicais"
       tabBarOptions={{
         showLabel: false,
         style: { backgroundColor: "#484E4A" },

@@ -165,7 +165,7 @@ const estilo = StyleSheet.create({
   subtitulo: {
     fontFamily: "Trebuchet MS",
     fontSize: 16,
-    marginBottom: 5,
+    marginBottom: 25,
     color: "#e7e7e7",
   },
 });
