@@ -4,6 +4,7 @@ import Home from "../views/Home/Home";
 import TopTabsMusicais from "./topTabRoutes2";
 import TopTabs from "./topTabRoutes";
 import { Entypo } from "@expo/vector-icons";
+import Perfil from "../views/Perfil/Perfil";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,6 +12,7 @@ const icones = {
   Filmes: "clapperboard",
   Musicais: "ticket",
   Home: "home",
+  Perfil: "user",
 };
 
 const TabRoutes = () => {
@@ -49,6 +51,14 @@ const TabRoutes = () => {
       <Tab.Screen
         name="Filmes"
         component={TopTabs}
+        options={{
+          unmountOnBlur: true,
+        }}
+      />
+
+      <Tab.Screen
+        name="Perfil"
+        component={Perfil}
         options={{
           unmountOnBlur: true,
         }}
