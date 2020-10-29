@@ -1,8 +1,8 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../views/Home/Home";
-import Musicais from "../views/Musicais/Musicais";
-import Filmes from "../views/Filmes/Filmes";
+import TopTabsMusicais from "./topTabRoutes2";
+import TopTabs from "./topTabRoutes";
 import { Entypo } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
@@ -16,7 +16,7 @@ const icones = {
 const TabRoutes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Musicais"
+      initialRouteName="Home"
       tabBarOptions={{
         showLabel: false,
         style: { backgroundColor: "#484E4A" },
@@ -40,7 +40,7 @@ const TabRoutes = () => {
 
       <Tab.Screen
         name="Musicais"
-        component={Musicais}
+        component={TopTabsMusicais}
         options={{
           unmountOnBlur: true,
         }}
@@ -48,7 +48,7 @@ const TabRoutes = () => {
 
       <Tab.Screen
         name="Filmes"
-        component={Filmes}
+        component={TopTabs}
         options={{
           unmountOnBlur: true,
         }}

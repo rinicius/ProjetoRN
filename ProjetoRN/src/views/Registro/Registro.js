@@ -103,7 +103,7 @@ const estilo = StyleSheet.create({
   btnVoltar: {
     position: "relative",
     marginRight: "80%",
-    marginTop: "6%",
+    marginTop: "10%",
     alignItems: "center",
     backgroundColor: "#444846",
     borderRadius: 50,

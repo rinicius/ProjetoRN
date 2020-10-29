@@ -4,8 +4,12 @@ import { Text, View, StyleSheet } from "react-native";
 function Filmes({ navigate }) {
   return (
     <View style={estilo.mainContainer}>
-      <View style={estilo.secContainer}>
-        <Text style={estilo.texto}>Filmes!</Text>
+      <View style={estilo.tituloBorder}>
+        <Text style={estilo.titulo}>Filmes</Text>
+        <Text style={estilo.text}>
+          Por conta do COVID-19 os cinemas estão temporariamente fechados, por
+          tanto não há filmes em cartaz.
+        </Text>
       </View>
     </View>
   );
@@ -14,19 +18,28 @@ function Filmes({ navigate }) {
 const estilo = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    alignItems: "center",
     backgroundColor: "#363636",
   },
-  secContainer: {
-    flex: 1,
+  tituloBorder: {
     alignItems: "center",
-    justifyContent: "center",
   },
-  texto: {
-    fontFamily: "Arial",
-    fontSize: 18,
+  titulo: {
+    paddingTop: "7%",
+    fontFamily: "Trebuchet MS",
+    fontSize: 26,
     fontWeight: "600",
     color: "white",
+  },
+  borda: {
+    borderBottomWidth: 2,
+    borderBottomColor: "#00A6FF",
+  },
+  text: {
+    maxWidth: 320,
+    fontFamily: "Trebuchet MS",
+    marginTop: 15,
+    fontSize: 18,
+    color: "#976DD0",
   },
 });
 

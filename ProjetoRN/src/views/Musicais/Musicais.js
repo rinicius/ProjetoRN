@@ -6,32 +6,51 @@ function Musicais({ navigate }) {
   const [data, setData] = useState([
     {
       titulo: "Rei Leão",
+      localizacao: "Brodway/Brasil",
+      sinopse:
+        "Este musical infantil conta a história de Simba, um pequeno leãozinho que é filho de Mufasa, o ReiLeão, e da rainha Sarabi. O recém-nascido recebe a bênção do sábio macaco Rafiki mas, ao crescer, é envolvido nas artimanhas de seu tio Scar, o invejoso e maquiavélico irmão de Mufasa, que planeja livrar-se do sobrinho e herdar o trono.",
       imagem: "reileao",
+      imagembg: "musical1",
     },
     {
       titulo: "Anastasia",
+      localizacao: "Brodway/Brasil",
+      sinopse: "",
       imagem: "anastasia",
+      imagembg: "musical1",
     },
     {
       titulo: "Hamilton",
+      localizacao: "Brodway/Brasil",
+      sinopse: "",
       imagem: "hamilton",
+      imagembg: "musical1",
     },
     {
       titulo: "Wicked",
+      localizacao: "Brodway/Brasil",
+      sinopse: "",
       imagem: "wicked",
+      imagembg: "musical1",
     },
     {
       titulo: "Frozen",
+      localizacao: "Brodway/Brasil",
+      sinopse: "",
       imagem: "frozen",
+      imagembg: "musical1",
     },
     {
       titulo: "Dear Evan Hasen",
+      localizacao: "Brodway/Brasil",
+      sinopse: "",
       imagem: "dear",
+      imagembg: "musical1",
     },
   ]);
   return (
     <View style={estilo.mainContainer}>
-      <View style={estilo.borda}>
+      <View style={{ alignItems: "center" }}>
         <Text style={estilo.titulo}>Musicais!</Text>
       </View>
       <View style={estilo.secContainer}>
@@ -64,8 +83,7 @@ const estilo = StyleSheet.create({
     alignItems: "center",
   },
   titulo: {
-    paddingTop: "12%",
-    paddingBottom: 10,
+    paddingTop: "7%",
     fontFamily: "Trebuchet MS",
     fontSize: 26,
     fontWeight: "600",

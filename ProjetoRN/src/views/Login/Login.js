@@ -46,7 +46,7 @@ function Login({ navigation }) {
         <View style={{ flexDirection: "column" }}>
           <TouchableOpacity style={estilo.botao} onPress={avancar}>
             <Text
-              style={{ color: "#FFF", fontFamily: "Arial", fontWeight: "550" }}
+              style={{ color: "#FFF", fontFamily: "Arial", fontWeight: "500" }}
             >
               Entrar
             </Text>
@@ -56,7 +56,7 @@ function Login({ navigation }) {
             onPress={handleRegistro}
           >
             <Text
-              style={{ color: "white", fontFamily: "Arial", fontWeight: "550" }}
+              style={{ color: "white", fontFamily: "Arial", fontWeight: "500" }}
             >
               Registrar-se
             </Text>
@@ -108,7 +108,7 @@ const estilo = StyleSheet.create({
     elevation: 4,
   },
   imagem: {
-    top: "26%",
+    top: "20%",
     height: 200,
     width: 200,
   },

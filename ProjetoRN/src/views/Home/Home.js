@@ -15,13 +15,18 @@ function Home({ navigate }) {
       imagem: "noticia1",
       titulo: "Broadway prolonga fechamento dos teatros até 7 de junho",
       texto:
-        "Os teatros da Broadway, que estão entre as atrações turísticas mais visitadas da cidade de Nova York, continuarão fechados até 7 de junho devido ao surto global de coronavírus, informou um grupo da indústria nesta quarta-feira. Os teatros baixaram as portas em 12 de março, supostamente por um mês, enquanto as autoridades faziam um apelo às pessoas a evitarem multidões. Ler mais...",
+        "Os teatros da Broadway, que estão entre as atrações turísticas mais visitadas da cidade de Nova York, continuarão fechados até 7 de junho devido ao surto global de coronavírus, informou um grupo da indústria nesta quarta-feira. \n\nOs teatros baixaram as portas em 12 de março, supostamente por um mês, enquanto as autoridades faziam um apelo às pessoas a evitarem multidões. Ler mais...",
+      copyright: "©O Globo",
+      imagembg: "noticia1",
     },
     {
       index: "1",
       imagem: "noticia2",
       titulo:
         "Universal transmitirá peças da Broadway de graça no Youtube durante quarentena",
+      texto: "",
+      copyright: "©O Globo",
+      imagembg: "noticia2",
     },
   ]);
   return (
