@@ -5,6 +5,7 @@ import TopTabsMusicais from "./topTabRoutes2";
 import TopTabs from "./topTabRoutes";
 import { Entypo } from "@expo/vector-icons";
 import Perfil from "../views/Perfil/Perfil";
+import topTabRoutesPerfil from "./topTabRoutesPerfil";
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +19,7 @@ const icones = {
 const TabRoutes = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Perfil"
       tabBarOptions={{
         showLabel: false,
         style: { backgroundColor: "#484E4A" },
@@ -58,7 +59,7 @@ const TabRoutes = () => {
 
       <Tab.Screen
         name="Perfil"
-        component={Perfil}
+        component={topTabRoutesPerfil}
         options={{
           unmountOnBlur: true,
         }}

@@ -85,7 +85,7 @@ function Registro({ navigation }) {
 
         <TouchableOpacity style={estilo.botao} onPress={avancar}>
           <Text
-            style={{ color: "#FFF", fontFamily: "Arial", fontWeight: "550" }}
+            style={{ color: "#FFF", fontFamily: "Arial", fontWeight: "500" }}
           >
             Entrar
           </Text>

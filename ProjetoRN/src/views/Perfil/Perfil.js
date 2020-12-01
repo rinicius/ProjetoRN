@@ -1,30 +1,46 @@
-import React, { useState } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, View, StyleSheet, Image, FlatList } from "react-native";
+import AlunosContainer from "../../components/alunosContainer/alunosContainer";
+import { AlunosFB } from "../../firebase/alunosFB";
 
-function Perfil({ navigate }) {
+function Perfil({ navigation }) {
+  const [alunos, setAlunos] = useState();
+
+  const alunosFB = new AlunosFB();
+
+  useEffect(() => {
+    alunosFB
+      .read()
+      .orderBy("nome")
+      .onSnapshot((query) => {
+        const items = [];
+        query.forEach((doc) => {
+          items.push({ ...doc.data(), id: doc.id });
+        });
+        setAlunos(items);
+      });
+  }, []);
+
+  const carregar = (item) => {
+    navigation.jumpTo("CadastrarPerfil", { alunos: item });
+  };
+
   return (
     <View style={estilo.mainContainer}>
       <View style={estilo.tituloBorder}>
-        <View style={estilo.borda}>
-          <Text style={estilo.titulo}>Alunos</Text>
-        </View>
+        <Text style={estilo.titulo}>Alunos</Text>
       </View>
-      <View style={{ flexDirection: "column", alignItems: "center" }}>
-        <Image
-          source={require("../../../assets/perfil1.jpeg")}
-          style={estilo.imagem}
-        />
-        <Text style={estilo.subtitulo}>Vinicius Rocha</Text>
-        <Text style={estilo.subsubtitulo}>3º MIB(B)</Text>
-      </View>
-      <View style={{ flexDirection: "column", alignItems: "center" }}>
-        <Image
-          source={require("../../../assets/perfil2.jpg")}
-          style={estilo.imagem}
-        />
-        <Text style={estilo.subtitulo}>Kathellin Bianca</Text>
-        <Text style={estilo.subsubtitulo}>3º MIB(B)</Text>
-      </View>
+
+      <FlatList
+        showsHorizontalScrollIndicator={false}
+        showsVerticalScrollIndicator={false}
+        data={alunos}
+        keyExtractor={(alunos) => alunos.id}
+        renderItem={({ item }) => (
+          <AlunosContainer data={item} detalhe={() => carregar(item)} />
+        )}
+        style={{ marginBottom: 20, marginTop: 20 }}
+      />
     </View>
   );
 }
@@ -35,38 +51,15 @@ const estilo = StyleSheet.create({
     backgroundColor: "#363636",
   },
   titulo: {
-    paddingTop: "12%",
-    paddingBottom: 10,
+    paddingTop: "7%",
     fontFamily: "Trebuchet MS",
     fontSize: 26,
     fontWeight: "600",
     color: "white",
   },
-  borda: {
-    borderBottomWidth: 2,
-    borderBottomColor: "#00A6FF",
-  },
+
   tituloBorder: {
-    marginLeft: "10%",
-  },
-  imagem: {
-    width: 150,
-    height: 150,
-    borderRadius: 5,
-    marginTop: 25,
-  },
-  subtitulo: {
-    marginTop: 10,
-    fontFamily: "Trebuchet MS",
-    fontSize: 22,
-    fontWeight: "600",
-    color: "#00A6FF",
-  },
-  subsubtitulo: {
-    fontFamily: "Trebuchet MS",
-    fontSize: 16,
-    fontWeight: "600",
-    color: "#00A6FF",
+    alignItems: "center",
   },
 });
 
